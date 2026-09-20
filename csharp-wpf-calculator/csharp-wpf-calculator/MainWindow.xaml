@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:csharp_wpf_calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        ResizeMode="NoResize"
+        Title="csharp-wpf-calculator" Height="440" Width="350" Background="Gray">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0" Grid.ColumnSpan="4" Background="White" CornerRadius="10" BorderThickness="2" BorderBrush="Black"/>
+        <TextBlock x:Name="DisplayOperacao" Grid.Row="0" Grid.ColumnSpan="4" Text="" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Right" Margin="15,10"/>
+
+        <Button Click="NumeroBtn_Click" Grid.Row="3" Grid.Column="2" Content="9" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="3" Grid.Column="1" Content="8" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="3" Grid.Column="0" Content="7" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="4" Grid.Column="2" Content="6" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="4" Grid.Column="1" Content="5" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="4" Grid.Column="0" Content="4" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="5" Grid.Column="2" Content="3" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="5" Grid.Column="1" Content="2" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="5" Grid.Column="0" Content="1" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="0" Style="{StaticResource NumericoBtnStyle}"/>
+        <Button Click="NumeroBtn_Click" Grid.Row="6" Grid.Column="2" Content="." Style="{StaticResource NumericoBtnStyle}"/>
+
+        <Button Grid.Row="2" Click="FuncaoBtn_Click" Grid.Column="0" Content="AC" Style="{StaticResource FuncoesBtnStyle}"/>
+        <Button Grid.Row="2" Click="FuncaoBtn_Click" Grid.Column="1" Content="+/-" Style="{StaticResource FuncoesBtnStyle}"/>
+        <Button Grid.Row="2" Click="FuncaoBtn_Click" Grid.Column="2" Content="%" Style="{StaticResource FuncoesBtnStyle}"/>
+
+        <Button Grid.Row="2" Click="OperacaoBtn_Click" Grid.Column="3" Content="/" Style="{StaticResource OperacoesBtnStyle}"/>
+        <Button Grid.Row="3" Click="OperacaoBtn_Click" Grid.Column="3" Content="*" Style="{StaticResource OperacoesBtnStyle}"/>
+        <Button Grid.Row="4" Click="OperacaoBtn_Click" Grid.Column="3" Content="-" Style="{StaticResource OperacoesBtnStyle}"/>
+        <Button Grid.Row="5" Click="OperacaoBtn_Click" Grid.Column="3" Content="+" Style="{StaticResource OperacoesBtnStyle}"/>
+        <Button Grid.Row="6" Click="OperacaoBtn_Click"  Grid.Column="3" Content="=" Style="{StaticResource OperacoesBtnStyle}"/>
 
     </Grid>
 </Window>
