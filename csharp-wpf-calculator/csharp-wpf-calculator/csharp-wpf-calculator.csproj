@@ -9,4 +9,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Resources\Assets\BtnAcessoHistorico.png" />
+    <None Remove="Resources\Assets\BtnRetorno.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Assets\BtnAcessoHistorico.png" />
+    <Resource Include="Resources\Assets\BtnRetorno.png" />
+  </ItemGroup>
+
 </Project>

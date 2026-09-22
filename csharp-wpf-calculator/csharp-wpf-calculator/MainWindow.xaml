@@ -27,6 +27,11 @@
         <Border Grid.Row="0" Grid.ColumnSpan="4" Background="White" CornerRadius="10" BorderThickness="2" BorderBrush="Black"/>
         <TextBlock x:Name="DisplayOperacao" Grid.Row="0" Grid.ColumnSpan="4" Text="" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" TextAlignment="Right" Margin="15,10"/>
 
+        <Button x:Name="AcessoHistoricoBtn" Grid.Row="0" Grid.ColumnSpan="4"
+                Style="{StaticResource BtnAcessoHistoricoStyle}"
+                Click="AcessoHistoricoBtn_Click"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0"/>
+
         <Button Click="NumeroBtn_Click" Grid.Row="3" Grid.Column="2" Content="9" Style="{StaticResource NumericoBtnStyle}"/>
         <Button Click="NumeroBtn_Click" Grid.Row="3" Grid.Column="1" Content="8" Style="{StaticResource NumericoBtnStyle}"/>
         <Button Click="NumeroBtn_Click" Grid.Row="3" Grid.Column="0" Content="7" Style="{StaticResource NumericoBtnStyle}"/>

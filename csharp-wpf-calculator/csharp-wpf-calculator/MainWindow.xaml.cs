@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using csharp_wpf_calculator.Views;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -52,6 +53,12 @@ namespace csharp_wpf_calculator
         private void FuncaoClearBtn_Click(object sender, RoutedEventArgs e)
         {
             DisplayOperacao.Text = string.Empty;
+        }
+
+        private void AcessoHistoricoBtn_Click (object sender, RoutedEventArgs e)
+        {            
+            HistoricoOperacoes historicoOperacoes = new HistoricoOperacoes();
+            historicoOperacoes.Show();
         }
 
        private void FuncaoPorcentagemBtn_Click(object sender, RoutedEventArgs e)
