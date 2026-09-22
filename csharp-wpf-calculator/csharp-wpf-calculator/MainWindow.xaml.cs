@@ -1,4 +1,5 @@
-﻿using csharp_wpf_calculator.Views;
+﻿using csharp_wpf_calculator.Models;
+using csharp_wpf_calculator.Views;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -88,6 +89,10 @@ namespace csharp_wpf_calculator
             calculadoraService.ResolverExpressao(expressao);
             double resultado = calculadoraService.NumerosConvertidos[0];
             DisplayOperacao.Text = resultado.ToString();
+
+            App aplicacaoAtual = Application.Current as App;
+            HistoricoItem novoItem = new HistoricoItem { Descricao = expressao + " = " + resultado.ToString() };
+            aplicacaoAtual.Historico.Add(novoItem);
         }
 
     }
