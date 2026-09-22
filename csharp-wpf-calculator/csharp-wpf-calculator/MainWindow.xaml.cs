@@ -48,6 +48,40 @@ namespace csharp_wpf_calculator
                 DisplayOperacao.Text += funcaoClicada;
             }
         }
-        
+
+        private void FuncaoClearBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DisplayOperacao.Text = string.Empty;
+        }
+
+       private void FuncaoPorcentagemBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string expressao = DisplayOperacao.Text;
+            Services.CalculadoraService calculadoraService = new Services.CalculadoraService();
+            calculadoraService.ResolverExpressao(expressao);
+            double resultado = calculadoraService.NumerosConvertidos[0];
+            resultado = resultado / 100;
+            DisplayOperacao.Text = resultado.ToString();
+        }
+
+        private void FuncaoInversaoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string expressao = DisplayOperacao.Text;
+            Services.CalculadoraService calculadoraService = new Services.CalculadoraService();
+            calculadoraService.ResolverExpressao(expressao);
+            double resultado = calculadoraService.NumerosConvertidos[0];
+            resultado = resultado * -1;
+            DisplayOperacao.Text = resultado.ToString();
+        }
+
+        private void IgualBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string expressao = DisplayOperacao.Text;
+            Services.CalculadoraService calculadoraService = new Services.CalculadoraService();
+            calculadoraService.ResolverExpressao(expressao);
+            double resultado = calculadoraService.NumerosConvertidos[0];
+            DisplayOperacao.Text = resultado.ToString();
+        }
+
     }
 }

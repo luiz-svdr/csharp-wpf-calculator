@@ -7,6 +7,7 @@ namespace csharp_wpf_calculator.Services
         public List<string> Numeros { get; private set; } = new List<string>();
         public List<string> Operadores { get; private set; } = new List<string>();
         public List<double> NumerosConvertidos { get; private set; } = new List<double>();
+             
 
         public void ResolverExpressao(string expressao)
         {
@@ -35,6 +36,51 @@ namespace csharp_wpf_calculator.Services
             {
                 NumerosConvertidos.Add(double.Parse(numero));
             }
-        }
+
+            int i = 0;
+            while (i < Operadores.Count)
+            {
+                if (Operadores[i] == "*" || Operadores[i] == "/")
+                {
+                    double resultado;
+
+                    if (Operadores[i] == "*")
+                    {
+                        resultado = NumerosConvertidos[i] * NumerosConvertidos[i + 1];
+                    }
+                    else
+                    {
+                        resultado = NumerosConvertidos[i] / NumerosConvertidos[i + 1];
+                    }
+
+                    NumerosConvertidos[i] = resultado;
+                    NumerosConvertidos.RemoveAt(i + 1);
+                    Operadores.RemoveAt(i);
+                }
+                else
+                {
+                    i++;
+                }
+            }
+
+            i = 0;
+            while (i < Operadores.Count)
+            {
+                double resultadoSoma;
+
+                if (Operadores[i] == "+")
+                {
+                    resultadoSoma = NumerosConvertidos[i] + NumerosConvertidos[i + 1];
+                }
+                else
+                {
+                    resultadoSoma = NumerosConvertidos[i] - NumerosConvertidos[i + 1];
+                }
+
+                NumerosConvertidos[i] = resultadoSoma;
+                NumerosConvertidos.RemoveAt(i + 1);
+                Operadores.RemoveAt(i);
+            }
+        }      
     }
 }

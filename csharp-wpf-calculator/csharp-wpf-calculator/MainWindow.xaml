@@ -39,15 +39,15 @@
         <Button Click="NumeroBtn_Click" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="0" Style="{StaticResource NumericoBtnStyle}"/>
         <Button Click="NumeroBtn_Click" Grid.Row="6" Grid.Column="2" Content="." Style="{StaticResource NumericoBtnStyle}"/>
 
-        <Button Grid.Row="2" Click="FuncaoBtn_Click" Grid.Column="0" Content="AC" Style="{StaticResource FuncoesBtnStyle}"/>
-        <Button Grid.Row="2" Click="FuncaoBtn_Click" Grid.Column="1" Content="+/-" Style="{StaticResource FuncoesBtnStyle}"/>
-        <Button Grid.Row="2" Click="FuncaoBtn_Click" Grid.Column="2" Content="%" Style="{StaticResource FuncoesBtnStyle}"/>
+        <Button Grid.Row="2" Click="FuncaoClearBtn_Click" Grid.Column="0" Content="AC" Style="{StaticResource FuncoesBtnStyle}"/>
+        <Button Grid.Row="2" Click="FuncaoInversaoBtn_Click" Grid.Column="1" Content="+/-" Style="{StaticResource FuncoesBtnStyle}"/>
+        <Button Grid.Row="2" Click="FuncaoPorcentagemBtn_Click" Grid.Column="2" Content="%" Style="{StaticResource FuncoesBtnStyle}"/>
 
         <Button Grid.Row="2" Click="OperacaoBtn_Click" Grid.Column="3" Content="/" Style="{StaticResource OperacoesBtnStyle}"/>
         <Button Grid.Row="3" Click="OperacaoBtn_Click" Grid.Column="3" Content="*" Style="{StaticResource OperacoesBtnStyle}"/>
         <Button Grid.Row="4" Click="OperacaoBtn_Click" Grid.Column="3" Content="-" Style="{StaticResource OperacoesBtnStyle}"/>
         <Button Grid.Row="5" Click="OperacaoBtn_Click" Grid.Column="3" Content="+" Style="{StaticResource OperacoesBtnStyle}"/>
-        <Button Grid.Row="6" Click="OperacaoBtn_Click"  Grid.Column="3" Content="=" Style="{StaticResource OperacoesBtnStyle}"/>
+        <Button Grid.Row="6" Click="IgualBtn_Click"  Grid.Column="3" Content="=" Style="{StaticResource OperacoesBtnStyle}"/>
 
     </Grid>
 </Window>
