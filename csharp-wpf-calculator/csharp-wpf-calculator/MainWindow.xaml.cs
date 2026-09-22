@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using csharp_wpf_calculator.Models;
+using csharp_wpf_calculator.Views;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -54,6 +56,12 @@ namespace csharp_wpf_calculator
             DisplayOperacao.Text = string.Empty;
         }
 
+        private void AcessoHistoricoBtn_Click (object sender, RoutedEventArgs e)
+        {            
+            HistoricoOperacoes historicoOperacoes = new HistoricoOperacoes();
+            historicoOperacoes.Show();
+        }
+
        private void FuncaoPorcentagemBtn_Click(object sender, RoutedEventArgs e)
         {
             string expressao = DisplayOperacao.Text;
@@ -81,6 +89,10 @@ namespace csharp_wpf_calculator
             calculadoraService.ResolverExpressao(expressao);
             double resultado = calculadoraService.NumerosConvertidos[0];
             DisplayOperacao.Text = resultado.ToString();
+
+            App aplicacaoAtual = Application.Current as App;
+            HistoricoItem novoItem = new HistoricoItem { Descricao = expressao + " = " + resultado.ToString() };
+            aplicacaoAtual.Historico.Add(novoItem);
         }
 
     }
